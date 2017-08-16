@@ -119,4 +119,5 @@ func writeOutChunk(fileNameStringFixed string){
       fmt.Println(err)
   }
   w.Flush()
+
 }
