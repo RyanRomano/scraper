@@ -24,7 +24,7 @@ func main() {
   }
   w = bufio.NewWriter(fileOUT)
 
-	for i := 1; i < 200; i++ {
+	for i := 138; i < 150; i++ {
 		s := strconv.Itoa(i)
 
 		fileNameParts := []string{"part-",s,".ts"}
@@ -33,12 +33,10 @@ func main() {
 		fileNameStringFixed := strings.Join(fileNameStringFixedParts, "")
 
     resp = downloadChunk(s)
-    if resp != nil {
-      createFile(fileNameString, resp)
-      writeOutChunk(fileNameStringFixed)
-      fixChunkQuality(fileNameString, fileNameStringFixed)
-      deleteOriginal(fileNameString)
-    }else{break}
+    createFile(fileNameString, resp)
+    writeOutChunk(fileNameStringFixed)
+    fixChunkQuality(fileNameString, fileNameStringFixed)
+    deleteOriginal(fileNameString)
 	}
   concatChunks()
   deleteParts()
