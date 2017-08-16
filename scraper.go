@@ -24,7 +24,7 @@ func main() {
   }
   w = bufio.NewWriter(fileOUT)
 
-	for i := 138; i < 150; i++ {
+	for i := 1; i < 150; i++ {
 		s := strconv.Itoa(i)
 
 		fileNameParts := []string{"part-",s,".ts"}
